@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+
+           targetNamespace="http://iban.mano.lt/soap"
+
+           xmlns:tns="http://iban.mano.lt/soap" elementFormDefault="qualified">
+
+    <xs:element name="GetIbanCheckRequest">
+
+        <xs:complexType>
+
+            <xs:sequence>
+
+                <xs:element name= "numberIBAN" type="xs:string"/>
+
+            </xs:sequence>
+
+        </xs:complexType>
+
+    </xs:element>
+
+    <xs:element name="GetIbanCheckResponse">
+
+        <xs:complexType>
+
+            <xs:sequence>
+
+                <xs:element name= "IbanCheck" type="tns:IbanCheck"/>
+
+            </xs:sequence>
+
+        </xs:complexType>
+
+    </xs:element>
+
+    <xs:complexType name="IbanCheck">
+
+        <xs:sequence>
+
+            <xs:element name="numberIBAN" type="xs:string"/>
+
+            <xs:element name="statusIBAN" type="xs:boolean"/>
+
+
+        </xs:sequence>
+
+    </xs:complexType>
+
+</xs:schema>
